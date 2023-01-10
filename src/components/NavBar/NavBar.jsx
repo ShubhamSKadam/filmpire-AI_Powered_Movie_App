@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     AppBar,
     IconButton,
@@ -20,7 +20,10 @@ import { useTheme } from "@mui/material/styles";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 
+import { Sidebar } from "..";
+
 const NavBar = () => {
+    const [mobileOpen, setMobileOpen] = useState(false);
     const classes = useStyles();
     const isMobile = useMediaQuery("(max-width:600px)");
     const theme = useTheme();
@@ -77,6 +80,29 @@ const NavBar = () => {
                     {isMobile && "Search..."}
                 </Toolbar>
             </AppBar>
+            <div>
+                <nav className={classes.drawer}>
+                    {isMobile ? (
+                        <Drawer
+                            variant="temporary"
+                            anchor="right"
+                            open={mobileOpen}
+                            classes={{ paper: classes.drawerPaper }}
+                            ModalProps={{ keepMounted: true }}
+                        >
+                            <Sidebar setMobileOpen={setMobileOpen} />
+                        </Drawer>
+                    ) : (
+                        <Drawer
+                            classes={{ paper: classes.drawerPaper }}
+                            variant="permanent"
+                            open
+                        >
+                            <Sidebar setMobileOpen={setMobileOpen} />
+                        </Drawer>
+                    )}
+                </nav>
+            </div>
         </>
     );
 };
