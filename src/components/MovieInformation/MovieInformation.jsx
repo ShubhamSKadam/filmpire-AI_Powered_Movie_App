@@ -90,7 +90,10 @@ const MovieInformation = () => {
                             key={genre.name}
                             className={classes.links}
                             to="/"
-                            onClick={() => dispatch(selectGenreOrCategory(genre.id))}>
+                            onClick={() =>
+                                dispatch(selectGenreOrCategory(genre.id))
+                            }
+                        >
                             <img
                                 src={genreIcons[genre.name.toLowerCase()]}
                                 className={classes.genreImage}
@@ -101,6 +104,39 @@ const MovieInformation = () => {
                             </Typography>
                         </Link>
                     ))}
+                </Grid>
+                <Typography
+                    variant="h5"
+                    gutterBottom
+                    style={{ marginTop: "10px" }}
+                >
+                    OverView
+                </Typography>
+                <Typography style={{ marginBottom: "2rem" }}>
+                    {data?.overview}
+                </Typography>
+                <Typography variant="h5" gutterBottom>
+                    Top Cast
+                </Typography>
+                <Grid item container spacing={2}>
+                    {data &&
+                        data.credits.cast.map((character, i) => (
+                            <Grid
+                                key={i}
+                                item
+                                xs={4}
+                                md={2}
+                                component={Link}
+                                to={`/actors/${character.id}`}
+                                style={{ textDecoration: "none" }}
+                            >
+                                <img
+                                    className={classes.castImage}
+                                    src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
+                                    alt={character.name}
+                                />
+                            </Grid>
+                        ))}
                 </Grid>
             </Grid>
         </Grid>
