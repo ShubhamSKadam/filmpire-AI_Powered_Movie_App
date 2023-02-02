@@ -53,7 +53,6 @@ const MovieInformation = () => {
 
     const addToWatchlist = () => {};
 
-
     if (isFetching) {
         return (
             <Box display="flex" justifyContent="center" alignItems="center">
@@ -71,7 +70,7 @@ const MovieInformation = () => {
 
     return (
         <Grid container className={classes.containerSpaceAround}>
-            <Grid item sm={12} lg={4}>
+            <Grid item sm={12} lg={4} align="center">
                 <img
                     className={classes.poster}
                     src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}
@@ -97,10 +96,7 @@ const MovieInformation = () => {
                         </Typography>
                     </Box>
                     <Typography variant="h6" align="center" gutterBottom>
-                        {data?.runtime}min{" "}
-                        {data?.spoken_languages.length > 0
-                            ? `/ ${data?.spoken_languages[0].name}`
-                            : ""}
+                        {data?.runtime}min
                     </Typography>
                 </Grid>
                 <Grid item className={classes.genresContainer}>
