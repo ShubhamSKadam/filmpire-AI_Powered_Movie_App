@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
     AppBar,
     IconButton,
@@ -16,6 +16,7 @@ import {
     Brightness7,
 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { ColorModeContext } from "../../utils/ToggleColorMode";
 
 import { setUser, userSelector } from "../../features/auth";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,7 +33,7 @@ const NavBar = () => {
     const theme = useTheme();
     const dispatch = useDispatch();
 
-    console.log(user);
+    const colorMode = useContext(ColorModeContext);
 
     const token = localStorage.getItem("request_token");
     const sessionIdFromLocalStorage = localStorage.getItem("session_id");
@@ -80,7 +81,7 @@ const NavBar = () => {
                     <IconButton
                         color="inherit"
                         sx={{ ml: 1 }}
-                        onClick={() => {}}
+                        onClick={colorMode.toggleColorMode}
                     >
                         {theme.palette.mode === "dark" ? (
                             <Brightness7 />
@@ -98,7 +99,7 @@ const NavBar = () => {
                             <Button
                                 color="inherit"
                                 component={Link}
-                                to={`/profile/${user.id}`} 
+                                to={`/profile/${user.id}`}
                                 className={classes.linkButton}
                                 onClick={() => {}}
                             >
