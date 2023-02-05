@@ -8,13 +8,13 @@
 
 Features include:
 
--   user authentication,
--   light and dark mode,
--   API calls with axios and Redux,
--   actors and movie details page,
--   watchlist and list of favorite movies,
--   movie search functionality,
--   Alan AI voice functionality and many more.
+-   User Authentication,
+-   Light and Dark mode,
+-   API calls with Axios and Redux,
+-   Actors and Movie Details Page,
+-   Watchlist and List of Favorite Movies,
+-   Movie Search Functionality,
+-   Alan AI Voice Functionality and many more.
 
 Alan works as an in-app voice assistant for the Filmpire project.
 
@@ -43,6 +43,10 @@ Setup:
 3. Install NPM packages:
     ```sh
     npm install
+    ```
+    Note: If you get the peer dependency error :
+    ```sh
+    npm install --legacy-peer-deps
     ```
 4. Create your `.env` file as it is instructed in `.env.example`.
 5. Enter your TMDB API key in your `.env`.
