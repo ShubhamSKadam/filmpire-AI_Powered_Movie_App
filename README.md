@@ -4,7 +4,7 @@
 
 ## About the Project
 
-![1](readme_img\1.png)
+![1](readme_img/1.png)
 
 Features include:
 
