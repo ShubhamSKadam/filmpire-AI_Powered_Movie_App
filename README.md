@@ -59,8 +59,6 @@ Setup:
 
 ## Usage
 
-For a full demonstration of all the functionalities of this phenomenal web application check out this [demo site](https://filmpire-jovan.netlify.app/).
-
 _For more detailes regarding TMDB API calls, please refer to the [Documentation](https://developers.themoviedb.org/3/getting-started/introduction)._
 
-See the [open issues](https://github.com/jovan-vukic/filmpire/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/ShubhamSKadam/filmpire-AI_Powered_Movie_App/issues) for a full list of proposed features (and known issues).
