@@ -30,7 +30,7 @@ const Movie = ({ movie, i }) => {
                     <Typography className={classes.title} variant="h5">
                         {movie.title}
                     </Typography>
-                    <Tooltip disableTouchListener title={`${(movie.vote_average).toFixed(1)}/10`}>
+                    <Tooltip disableTouchListener title={`${Math.round(movie.vote_average * Math.pow(10, 1)) / Math.pow(10, 1)}/10`}>
                         <div>
                             <Rating
                                 readOnly
